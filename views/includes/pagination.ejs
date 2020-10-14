@@ -1,0 +1,28 @@
+<section class="pagination">
+  
+  <% if (currPage !== 1) { %>
+    <a href="?page=<%= 1 %>">First</a>
+  <% } %>
+
+  <% if (currPage-1>0) { %>
+    <a href="?page=<%= currPage-1 %>">prev</a>
+  <% } %>
+
+  <% for( let index = firstDisplay; index <= lastDisplay; index++ ) { %>
+
+    <% if (index===currPage) { %>
+      <a href="?page=<%= index %>" style="background: #00695c; color: #ffeb3b;"><%= index %> </a>
+    <% } else { %>
+      <a href="?page=<%= index %>"><%= index %> </a>         
+    <% } %>
+    
+  <% } %> 
+
+  <% if (currPage+1<lastPage) { %>
+    <a href="?page=<%= currPage+1 %>">next</a>
+  <% } %>
+
+  <% if (currPage !== lastPage) { %>
+    <a href="?page=<%= lastPage %>">Last</a>
+  <% } %>
+</section>
